@@ -1,0 +1,77 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "CandidateAPI",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Candidate": {
+      "get": {
+        "tags": [
+          "Candidate"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Candidate"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddCandidateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddCandidateDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddCandidateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AddCandidateDto": {
+        "required": [
+          "cityName",
+          "firstName",
+          "yearOfJoining"
+        ],
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "cityName": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "yearOfJoining": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

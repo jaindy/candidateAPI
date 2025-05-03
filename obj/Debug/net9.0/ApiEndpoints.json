@@ -1,0 +1,28 @@
+[
+  {
+    "ContainingType": "CandidateAPI.Controllers.CandidateController",
+    "Method": "GetAllCandidates",
+    "RelativePath": "api/Candidate",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CandidateAPI.Controllers.CandidateController",
+    "Method": "AddCandidate",
+    "RelativePath": "api/Candidate",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addCandidateDto",
+        "Type": "CandidateAPI.Models.AddCandidateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
