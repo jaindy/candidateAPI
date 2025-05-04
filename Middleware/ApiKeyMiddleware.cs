@@ -3,7 +3,7 @@
     public class ApiKeyMiddleware
     {
         private readonly RequestDelegate _next;
-        private const string APIKEY = "XApiKey";
+        private const string APIKEY = "X-API-KEY";
         public ApiKeyMiddleware(RequestDelegate next)
         {
             _next = next;
@@ -28,7 +28,7 @@
                 return;
             }
             var appSettings = context.RequestServices.GetRequiredService<IConfiguration>();
-            var configuredApiKey = appSettings.GetValue<string>("XApiKey");
+            var configuredApiKey = appSettings.GetValue<string>("X-API-KEY");
             if (string.IsNullOrWhiteSpace(configuredApiKey) || !configuredApiKey.Equals(extractedApiKey))
             {
                 context.Response.StatusCode = StatusCodes.Status401Unauthorized; ;
